@@ -1,12 +1,12 @@
-import numpy as np
-import string
 import os
+import string
 import operator
+import numpy as np
 from nltk import pos_tag, word_tokenize
 from datetime import datetime
 
 def remove_punctutation(s):
-    return s.translate(string.punctuation)
+    return ''.join(list(filter(lambda x: x not in string.punctuation, s)))
 
 def my_tokenizer(s):
     s = remove_punctutation(s)
