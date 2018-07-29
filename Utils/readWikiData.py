@@ -13,6 +13,12 @@ def my_tokenizer(s):
     s = s.lower()
     return s.split()
 
+def decodeText(inputText):
+    try:  
+        return inputText.decode('ascii')
+    except:
+        return inputText.decode('utf-8')
+
 def get_wikipedia_data(n_files, n_vocab, by_paragraph=False):
     #repo_path = os.path.dirname(os.path.realpath('__file__'))
     #print "inside get_wikipedia_data() : current path = %s" %repo_path
@@ -38,7 +44,7 @@ def get_wikipedia_data(n_files, n_vocab, by_paragraph=False):
     for f in input_files:
         #print("reading:", f)
         for line in open(data_path + f):
-            line = line.strip()
+            line = decodeText(line).strip()
             # don't count headers, structured data, lists, etc...
             if line and line[0] not in ('[', '*', '-', '|', '=', '{', '}'):
                 if by_paragraph:
