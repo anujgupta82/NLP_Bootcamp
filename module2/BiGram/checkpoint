@@ -1,2 +1,2 @@
-model_checkpoint_path: "bigram_chk_pts"
-all_model_checkpoint_paths: "bigram_chk_pts"
+model_checkpoint_path: "bigram_wiki_chk_pts"
+all_model_checkpoint_paths: "bigram_wiki_chk_pts"
