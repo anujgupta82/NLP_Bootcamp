@@ -17,7 +17,10 @@ def decodeText(inputText):
     try:  
         return inputText.decode('ascii')
     except:
-        return inputText.decode('utf-8')
+        try:
+            return inputText.decode('utf-8')
+        except:
+            return inputText
 
 def get_wikipedia_data(n_files, n_vocab, by_paragraph=False):
     #repo_path = os.path.dirname(os.path.realpath('__file__'))
